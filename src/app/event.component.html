@@ -1,0 +1,20 @@
+Student Name : <input [(ngModel)] = "s1"/><br>
+Course Name : <input [(ngModel)] = "s2"/><br>
+Student Age : <input [(ngModel)] = "s3"/><br>
+<input type="button" value="Add Student" (click) ="fn_addStudent()"/><br>
+<table border="1">
+    <tr>
+        <th>S.no</th>
+        <th>Student Name</th>
+        <th>Course</th>
+        <th>Age</th>
+        <th></th>
+    </tr>
+    <tr *ngFor = "let item of students, index as i">
+        <td>{{i+1}}</td>
+        <td>{{item.sname}}</td>
+        <td>{{item.course}}</td>
+        <td>{{item.age}}</td>
+        <td><a href="#" (click) = "fn_removeStudent(i)">Remove</a></td>
+    </tr>
+</table>
